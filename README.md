@@ -5,7 +5,11 @@ Simple hdpi screen detector in javascript (High Dots Per Inch) based in feature 
 
 Compatible with modernizr library.
 
-Usage:
+## Live Demo
+[Demo hdpi.detector.js with css class](http://jorgegilramos.github.io/me/test/index.html)
+
+## Usage
+
 ###html
 ```html
 <script src="js/hdpi.detector.js" type="text/javascript"></script>
@@ -30,7 +34,7 @@ Using native javascript class:
 if (Detector.hdpi) {
   // The user has a hdpi display 
 } else {
-  // The user a non-hdpi display
+  // The user has a non-hdpi display
 }
 ```
 
@@ -39,6 +43,6 @@ Using modernizr:
 if (Modernizr.hdpi) {
   // The user has a hdpi display 
 } else {
-  // The user a non-hdpi display
+  // The user has a non-hdpi display
 }
 ```

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Demo hdpi.detector.js with css class</title>
+  
+  <style type="text/css" media="screen">
+  body {
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin:0 auto;
+    max-width:960px;
+  }
+  p {
+    margin:30px 0;
+  }
+  
+  #responsive-img {
+    height:48px;
+    width:138px;
+  }
+  
+  .no-hdpi #responsive-img {
+    /* no hdpi image. Low resolution */
+    background-image: url("google@1x.png");
+  }
+  
+  .hdpi #responsive-img {
+    /* hdpi image. High resolution */
+    background: url("google@2x.png") no-repeat;
+    background-size: 138px 48px;
+    display:block;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-left: 138px; /* Width of image */
+  }
+  </style>
+  <script src="../js/hdpi.detector.js" type="text/javascript"></script>
+</head>
+<body>
+  <h2>Demo hdpi.detector.js with css class</h2>
+  <p style="margin-top:0px">
+    Demo using css styles to show high resolution images in hdpi displays (low resolution otherwise).<br/>
+    Github project <a href="https://github.com/jorgegilramos/hdpi-detector">https://github.com/jorgegilramos/hdpi-detector</a></p>
+  <p>
+    <img src="google@1x.png" />
+    <br/>
+    Original low resolution image 138x48
+  </p>
+  <p>
+    <img src="google@2x.png" />
+    <br/>
+    Original high resolution image 275x95
+  </p>
+  <p>
+    <!-- Responsive image. css do the trick -->
+    <img id="responsive-img" src="google@1x.png" />
+    <br/>
+    <span id="detector-message"></span>
+  </p>
+  <script type="text/javascript">
+    // javascript just for detector message
+    if (Detector.hdpi) {
+      document.getElementById("detector-message").innerHTML = "Hdpi detected<br/>Responsive image in <b>high resolution</b>";
+    } else {
+      document.getElementById("detector-message").innerHTML = "No hdpi detected<br/>Responsive image in <b>low resolution</b>";
+    }
+  </script>
+</body>
+</html>

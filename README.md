@@ -7,6 +7,7 @@ Compatible with modernizr library.
 
 ## Live Demo
 [Demo hdpi.detector.js with javascript](http://jorgegilramos.github.io/me/test/demo_javascript.html)
+
 [Demo hdpi.detector.js with css class](http://jorgegilramos.github.io/me/test/demo_css.html)
 
 ## Usage

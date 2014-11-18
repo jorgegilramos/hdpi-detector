@@ -14,10 +14,12 @@ var mediaQuery = "(-webkit-min-device-pixel-ratio: 1.5),min--moz-device-pixel-ra
 if (window.Modernizr){
   // Try modernizr first
   Modernizr.addTest("hdpi", function(){
-    if (window.devicePixelRatio > 1) 
+    if (window.devicePixelRatio > 1)
       return true;
-    else
-      return Modernizr.mq(mediaQuery);
+    else {
+      if (Modernizr.mq(mediaQuery))
+        return true;
+    }
     return false;
   });
 } else {
@@ -29,8 +31,10 @@ if (window.Modernizr){
     Detector.hdpi = function () {
       if (window.devicePixelRatio > 1)
         return true;
-      else
-        return window.matchMedia && window.matchMedia(mediaQuery).matches;
+      else {
+        if (window.matchMedia && window.matchMedia(mediaQuery).matches)
+          return true;
+      }
       return false;
     }();
     // Add class to document

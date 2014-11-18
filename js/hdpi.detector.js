@@ -1,5 +1,5 @@
 /*
- * hdpi screen detector javascript 1.0.0 (High Dots Per Inch)
+ * hdpi screen detector javascript 1.0.1 (High Dots Per Inch)
  * Ricardo Jorge Gil Ramos
  * http://jorgegilramos.es/
  *
@@ -14,16 +14,24 @@ var mediaQuery = "(-webkit-min-device-pixel-ratio: 1.5),min--moz-device-pixel-ra
 if (window.Modernizr){
   // Try modernizr first
   Modernizr.addTest("hdpi", function(){
-    return window.devicePixelRatio > 1 && Modernizr.mq(mediaQuery);
+    if (window.devicePixelRatio > 1) 
+      return true;
+    else
+      return Modernizr.mq(mediaQuery);
+    return false;
   });
 } else {
   window.Detector = (function(window, document, undefined){
-    var version = "1.0.0",
+    var version = "1.0.1",
     Detector = {};
     docElement = document.documentElement;
     Detector._version = version;
-    Detector.hdpi = function(){
-      return window.devicePixelRatio > 1 && window.matchMedia && window.matchMedia(mediaQuery).matches;
+    Detector.hdpi = function () {
+      if (window.devicePixelRatio > 1)
+        return true;
+      else
+        return window.matchMedia && window.matchMedia(mediaQuery).matches;
+      return false;
     }();
     // Add class to document
     if (docElement.className === undefined) docElement.className="";

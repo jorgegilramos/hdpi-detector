@@ -10,7 +10,7 @@
  * RJGR © Creative Commons Attribution-NonCommercial 3.0 
  * License: http://creativecommons.org/licenses/by-nc/3.0/
  */
-var mediaQuery = "(-webkit-min-device-pixel-ratio: 1.5),min--moz-device-pixel-ratio: 1.5),(-o-min-device-pixel-ratio: 3/2),(min-device-pixel-ratio: 1.5),(min-resolution: 1.5dppx)";
+var mediaQuery = "(-webkit-min-device-pixel-ratio: 1.5),(min--moz-device-pixel-ratio: 1.5),(-o-min-device-pixel-ratio: 3/2),(min-device-pixel-ratio: 1.5),(min-resolution: 1.5dppx)";
 if (window.Modernizr){
   // Try modernizr first
   Modernizr.addTest("hdpi", function(){
